@@ -1,0 +1,9 @@
+2. Carga el conjunto de datos de Palmer Penguins
+Puedes acceder al conjunto de datos utilizando el siguiente enlace: https://github.com/allisonhorst/palmerpenguins/blob/main/inst/extdata/penguins.csv?raw=true
+Realiza una exploración inicial del conjunto de datos para familiarizarte con los datos y sus características
+
+3. Selecciona una técnica de visualización interactiva que prefieras y que creas que representaría mejor los datos.
+Asegúrate de que tu visualización sea interactiva, permitiendo a los usuarios explorar los datos a través de interacciones como pasar el cursor, hacer clic o acercar/alejar la imagen, filtros, etc.
+
+4. Interpreta la visualización.
+Escribe una breve interpretación (aproximadamente 200-300 palabras) describiendo tu visualización, sus características clave y cualquier percepción o patrón que hayas descubierto en los datos. Incluye esta interpretación en tu cuaderno de Google Colab como una celda de texto.
