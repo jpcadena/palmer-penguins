@@ -5,7 +5,6 @@ import logging
 from enum import Enum
 from typing import Union, Optional
 import pandas as pd
-from pandas.io.parsers import TextFileReader
 from core.config import ENCODING
 
 logger: logging.Logger = logging.getLogger(__name__)
@@ -68,18 +67,8 @@ class PersistenceManager:
         :rtype: pd.DataFrame
         """
         filepath: str = f'{data_type.value}{filename}'
-        text_file_reader: TextFileReader = pd.read_csv(
-            filepath, header=0, encoding=ENCODING)
-        dataframe: pd.DataFrame = pd.concat(
-            text_file_reader, ignore_index=True)
-        if dtypes:
-            for key, value in dtypes.items():
-                if value in (int, float):
-                    dataframe[key] = pd.to_numeric(
-                        dataframe[key], errors='coerce')
-                    dataframe[key] = dataframe[key].astype(value)
-                else:
-                    dataframe[key] = dataframe[key].astype(value)
+        dataframe: pd.DataFrame = pd.read_csv(
+            filepath, header=0, dtype=dtypes, encoding=ENCODING)
         return dataframe
 
     @staticmethod
